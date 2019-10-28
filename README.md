@@ -1,4 +1,4 @@
-## Requisitos FRONTEnd!
+## Requisitos FrontEnd!
 
 Necessario instalar o node.js<br>
 Necessario utilizar o npm install create-react-app na pasta Front : "DistanciaAmigos\FrontEnd\Front"<BR>
