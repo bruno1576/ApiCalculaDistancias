@@ -14,7 +14,7 @@ Depois disso, utilizar o NPM START
  
  Porta do backend: 51751 ("já configurada, porem caso exista algum problema, setar a porta 51751 para o backend")
  Porta do front : 3000 ("Já configurada no projeto, porem caso ocorra algum erro, setar a porta 3000")
- 
+ ##
  Token já configurado previamente.
 
 
