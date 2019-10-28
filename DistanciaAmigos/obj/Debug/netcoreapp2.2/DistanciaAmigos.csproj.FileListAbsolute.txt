@@ -1,0 +1,28 @@
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\bin\Debug\netcoreapp2.2\DistanciaAmigos.deps.json
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\bin\Debug\netcoreapp2.2\DistanciaAmigos.runtimeconfig.json
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\bin\Debug\netcoreapp2.2\DistanciaAmigos.runtimeconfig.dev.json
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\bin\Debug\netcoreapp2.2\DistanciaAmigos.dll
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\bin\Debug\netcoreapp2.2\DistanciaAmigos.pdb
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.csproj.CoreCompileInputs.cache
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorAssemblyInfo.cache
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorAssemblyInfo.cs
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.AssemblyInfoInputs.cache
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.AssemblyInfo.cs
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorTargetAssemblyInfo.cache
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.dll
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.pdb
+C:\Users\bruno\Desktop\Projeto Final\bin\Debug\netcoreapp2.2\DistanciaAmigos.deps.json
+C:\Users\bruno\Desktop\Projeto Final\bin\Debug\netcoreapp2.2\DistanciaAmigos.runtimeconfig.json
+C:\Users\bruno\Desktop\Projeto Final\bin\Debug\netcoreapp2.2\DistanciaAmigos.runtimeconfig.dev.json
+C:\Users\bruno\Desktop\Projeto Final\bin\Debug\netcoreapp2.2\DistanciaAmigos.dll
+C:\Users\bruno\Desktop\Projeto Final\bin\Debug\netcoreapp2.2\DistanciaAmigos.pdb
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.csprojAssemblyReference.cache
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.csproj.CoreCompileInputs.cache
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorAssemblyInfo.cache
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorAssemblyInfo.cs
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.AssemblyInfoInputs.cache
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.AssemblyInfo.cs
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.RazorTargetAssemblyInfo.cache
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.dll
+C:\Users\bruno\Desktop\Projeto Final\obj\Debug\netcoreapp2.2\DistanciaAmigos.pdb
+C:\Users\bruno\source\repos\DistanciaAmigos\DistanciaAmigos\obj\Debug\netcoreapp2.2\DistanciaAmigos.csprojAssemblyReference.cache
