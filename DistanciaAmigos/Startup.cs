@@ -21,6 +21,10 @@ namespace DistanciaAmigos
     {
 
         public IConfiguration Configuration { get; }
+        public Startup(IConfiguration configuration)
+        {
+            Configuration = configuration;
+        }
         readonly string MyAllowSpecificOrigins = "_myAllowSpecificOrigins";
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
@@ -80,9 +84,11 @@ namespace DistanciaAmigos
                     policy => policy.RequireClaim("UsuarioAPINumero"));
             });
             
-            services.AddMvc(); 
+            services.AddMvc();
+           
 
             services.AddScoped<MyContext, MyContext>();
+          
             services.AddTransient<LocalizacaoRepository, LocalizacaoRepository>();
 
         }

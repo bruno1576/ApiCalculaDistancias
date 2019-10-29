@@ -15,7 +15,7 @@ namespace DistanciaAmigos.Repositories
         }
         public IEnumerable<Amigo> Get()
         {
-            
+        
 
             return _Context.Amigo;
 
