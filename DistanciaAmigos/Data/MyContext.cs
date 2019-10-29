@@ -10,20 +10,21 @@ namespace DistanciaAmigos.Data
         public DbSet<Amigo> Amigo { get; set; }
         // public DbSet<Category> Categories { get; set; }
         private readonly IConfiguration configuration;
-     //   public MyContext(IConfiguration config)
 
-      //  {
-        //    configuration = config;
+        public MyContext(IConfiguration config)
 
-        //}
+       {
+            configuration = config;
+
+        }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
 
-            string testeCon = configuration.GetConnectionString("MyConnStr");
+            string StringCon = configuration.GetConnectionString("MyConnStr");
 
-          //  optionsBuilder.UseSqlServer("Server=.\\SQLEXPRESS;Database=DbNovo;User ID=sa;Password=mudar@123");
-
+              optionsBuilder.UseSqlServer(StringCon);
+            var teste = 0;
           
             // optionsBuilder.UseInMemoryDatabase();
 
@@ -34,6 +35,7 @@ namespace DistanciaAmigos.Data
         {
             
            
+
         }
     }
 }
