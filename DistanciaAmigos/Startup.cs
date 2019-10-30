@@ -88,7 +88,7 @@ namespace DistanciaAmigos
            
 
             services.AddScoped<MyContext, MyContext>();
-          
+            
             services.AddTransient<LocalizacaoRepository, LocalizacaoRepository>();
 
         }
@@ -99,6 +99,11 @@ namespace DistanciaAmigos
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+            }
+            using (var serviceScope = app.ApplicationServices.GetService<IServiceScopeFactory>().CreateScope())
+            {
+                var contexts = serviceScope.ServiceProvider.GetRequiredService<MyContext>();
+                contexts.Database.EnsureCreated();
             }
             app.UseCors(MyAllowSpecificOrigins);
             app.UseAuthentication();

@@ -8,7 +8,7 @@ namespace DistanciaAmigos.Data
     public class MyContext : DbContext
     {
         public DbSet<Amigo> Amigo { get; set; }
-        // public DbSet<Category> Categories { get; set; }
+ 
         private readonly IConfiguration configuration;
 
         public MyContext(IConfiguration config)
@@ -24,9 +24,9 @@ namespace DistanciaAmigos.Data
             string StringCon = configuration.GetConnectionString("MyConnStr");
 
               optionsBuilder.UseSqlServer(StringCon);
-            var teste = 0;
+
           
-            // optionsBuilder.UseInMemoryDatabase();
+          
 
         }
 

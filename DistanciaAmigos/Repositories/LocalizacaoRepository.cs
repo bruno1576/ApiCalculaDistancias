@@ -11,6 +11,7 @@ namespace DistanciaAmigos.Repositories
         private readonly MyContext _Context;
         public LocalizacaoRepository(MyContext Context)
         {
+           
             _Context = Context;
         }
         public IEnumerable<Amigo> Get()

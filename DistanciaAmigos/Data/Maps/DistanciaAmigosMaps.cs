@@ -8,7 +8,7 @@ namespace DistanciaAmigos.Data.Maps
     {
         public void Configure(EntityTypeBuilder<Amigo> builder)
         {
-            builder.ToTable("LocalizacaoAmigo");
+            builder.ToTable("Amigo");
             builder.HasKey(x => x.Id);
             builder.Property(x => x.Nome).IsRequired();
             builder.Property(x => x.X).IsRequired();
