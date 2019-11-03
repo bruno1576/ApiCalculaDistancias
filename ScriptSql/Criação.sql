@@ -2,7 +2,7 @@ create database DbDistancia
 go
 USE [DbDistancia]
 GO
-/****** Object:  Table [dbo].[Amigos]    Script Date: 03/11/2019 19:11:02 ******/
+
 SET ANSI_NULLS ON
 GO
 SET QUOTED_IDENTIFIER ON
