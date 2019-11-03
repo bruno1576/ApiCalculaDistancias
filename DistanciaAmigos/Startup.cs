@@ -64,8 +64,7 @@ namespace DistanciaAmigos
                 options.AddPolicy(MyAllowSpecificOrigins,
                 builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000",
-                                        "http://www.contoso.com").AllowAnyHeader()
+                    builder.WithOrigins("http://localhost:3000").AllowAnyHeader()
                                                                   .AllowAnyMethod();
                 });
                          options.AddPolicy("AnotherPolicy",

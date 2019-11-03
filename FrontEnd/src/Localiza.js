@@ -34,12 +34,14 @@ export class Localiza extends Component {
 
 
         PubSub.publish('atualiza-lista-autores', resposta);
-        console.log(resposta);
+
 
 
       }.bind(this),
       error: function (resposta) {
-
+        console.log('We are');
+        console.log(resposta);
+        alert(resposta.responseJSON.descricao);
       }
 
     });
@@ -65,7 +67,7 @@ export class Localiza extends Component {
       <div className="pure-form pure-form-aligner">
         <form className="pure-form pure-form-aligned" onSubmit={this.enviaForm} method="post">
           <InputCustomizado id="X" type="text" name="X" value={this.state.X} onChange={this.setX} label="X" />
-          <InputCustomizado id="idade" type="text" name="Y" value={this.state.Y} onChange={this.setY} label="Y" />
+          <InputCustomizado id="idade" type="text" name="Y" value={this.state.Y} onChange={this.setY} label="Y" required />
           <div className="pure-control-group">
             <label></label>
             <button type="submit" className="pure-button pure-button-primary">Localiza</button>
@@ -100,8 +102,8 @@ export class TabelaCadastro extends Component {
                 <tbody>
 
                   <tr >
-                    <td>{lista.Nome}</td>
-                    <td>{lista.Distancia}</td>
+                    <td>{lista.nome}</td>
+                    <td>{lista.total}</td>
                   </tr>
 
                 </tbody>
@@ -135,14 +137,15 @@ export default class LocalizaBox extends Component {
     PubSub.subscribe('atualiza-lista-autores', function (topico, novaLista) {
       var array = [{}]
 
-      for (var variavel in novaLista) {
+      for (var variavel in novaLista["pessoas"]) {
         // console.log(novaLista);
         // console.log(novaLista[variavel]);
-        array.push({ "Nome": variavel, "Distancia": novaLista[variavel] });
+
+        array.push(novaLista[variavel]);
       }
 
 
-      this.setState({ lista: array });
+      this.setState({ lista: novaLista });
 
 
     }.bind(this));

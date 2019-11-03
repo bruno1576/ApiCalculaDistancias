@@ -7,13 +7,15 @@ namespace DistanciaAmigos.Data
 {
     public class MyContext : DbContext
     {
-        public DbSet<Amigo> Amigo { get; set; }
- 
+        public DbSet<Amigo> Amigos { get; set; }
+        public DbSet<DistanciaEntreAmigos> DistanciaAmigos { get; set; }
+
         private readonly IConfiguration configuration;
 
         public MyContext(IConfiguration config)
 
        {
+            
             configuration = config;
 
         }

@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.Linq;
 using DistanciaAmigos.Data;
 using DistanciaAmigos.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace DistanciaAmigos.Repositories
 {
@@ -14,23 +15,24 @@ namespace DistanciaAmigos.Repositories
            
             _Context = Context;
         }
-        public IEnumerable<Amigo> Get()
+        public IEnumerable<DistanciaEntreAmigos> Get()
         {
-        
+           var DistanciaAmigos = _Context.DistanciaAmigos
+                .Include(amigo => amigo.Amigo)
+                .ToList();
 
-            return _Context.Amigo;
+            return DistanciaAmigos;
 
         }
-        public IQueryable <Amigo> GetFind(float X , float Y)
+        public IQueryable <DistanciaEntreAmigos> GetFind(float X , float Y)
         {
-            return _Context.Amigo.Where(c => c.X == X && c.Y == Y);
+            return _Context.DistanciaAmigos.Where(c => c.X == X && c.Y == Y);
 
-            //return _Context.Amigo.Find();
 
         }
-        public void Create(Amigo localizacao)
+        public void Create(DistanciaEntreAmigos localizacao)
         {
-            _Context.Amigo.Add(localizacao);
+            _Context.DistanciaAmigos.Add(localizacao);
             _Context.SaveChanges();
         }
     }

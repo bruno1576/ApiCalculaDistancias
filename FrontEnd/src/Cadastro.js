@@ -25,21 +25,20 @@ export class FormularioCadastro extends Component {
       crossDomain: true,
       dataType: 'json',
       type: 'post',
-      data: JSON.stringify({ Nome: this.state.Nome, X: this.state.X, Y: this.state.Y }),
+      data: JSON.stringify({ Amigo: { nome: this.state.Nome }, X: this.state.X, Y: this.state.Y }),
       headers: {
         'Authorization': 'Bearer ' + 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJWYWxkaXIgRmVycmVpcmEiLCJqdGkiOiI1OTc1NWFkZC04YTc2LTQ0YTYtOTJlZS01YmMwMjc3NzQwYTgiLCJVc3VhcmlvQVBJTnVtZXJvIjoiMSIsImV4cCI6NjE1NzIxODgyMzAsImlzcyI6IlRlc3RlLlNlY3VyaXJ5LkJlYXJlciIsImF1ZCI6IlRlc3RlLlNlY3VyaXJ5LkJlYXJlciJ9.9n-Xbe1fiOxDxVkIXipzVHapj0Olcl64RFAQ8EYmXtY'
       },
       success: function (resposta) {
         console.log(resposta);
-        if (resposta.nome) {
-          PubSub.publish('atualiza-lista-autores', resposta);
-        }
-        else {
-          alert(resposta.Erro);
-        }
+
+        PubSub.publish('atualiza-lista-autores', resposta);
+
+
       }.bind(this),
       error: function (resposta) {
-        console.log(resposta);
+        alert(resposta.responseJSON.descricao);
+
       }
 
     });
@@ -101,7 +100,7 @@ export class TabelaCadastro extends Component {
                   <tbody>
 
                     <tr key={lista.id}>
-                      <td>{lista.nome}</td>
+                      <td>{lista.amigo.nome}</td>
                       <td>{lista.x}</td>
                       <td>{lista.y}</td>
                     </tr>
@@ -134,7 +133,8 @@ export default class CadastroBox extends Component {
 
 
     PubSub.subscribe('atualiza-lista-autores', function (topico, novaLista) {
-      novaLista = [{ nome: novaLista.nome, x: novaLista.x, y: novaLista.y }];
+      console.log(novaLista);
+      novaLista = [{ amigo: novaLista.amigo, x: novaLista.x, y: novaLista.y }];
 
       this.setState({ lista: novaLista });
 

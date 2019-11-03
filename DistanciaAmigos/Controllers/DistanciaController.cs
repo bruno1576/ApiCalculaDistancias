@@ -23,45 +23,60 @@ namespace DistanciaAmigos.Controllers
 
         }
 
-     
+
         [Route("{X}/{Y}")]
         [Authorize(Policy = "UsuarioAPI")]
         [HttpGet]
-        public JsonResult Get(float X, float Y)
+        public ActionResult Get(float X, float Y)
         {
-           
+
+
             var Consulta = _repository.Get();
 
             var Calculo = new CalculoDistancia();
-
-            return Json(Calculo.CalculaDistancias(X, Y, Consulta));
-
+            var resultado = Calculo.CalculaDistancias(X, Y, Consulta);
+            if (resultado.Erro == null)
+            {
+                return StatusCode(200, resultado.pessoas);
+            }
+            else
+            {
+                return StatusCode(400, resultado.Erro);
+            }
         }
 
 
         [Authorize(Policy = "UsuarioAPI")]
         [HttpPost]
-        public JsonResult Post([FromBody]Amigo LocalizacaoDoAmigo)
+        public ActionResult Post([FromBody]DistanciaEntreAmigos LocalizacaoDoAmigo)
         {
-          
-           var find = _repository.GetFind( LocalizacaoDoAmigo.X, LocalizacaoDoAmigo.Y);
-           var contador = find.Count();
+            var validacao = new validaCadastro();
 
-            if (contador == 0)
+
+            var find = _repository.GetFind(LocalizacaoDoAmigo.X, LocalizacaoDoAmigo.Y);
+            var contador = validacao.ValidaDuplicidade(LocalizacaoDoAmigo, _repository);
+            var ValidaNome = validacao.ValidaNome(LocalizacaoDoAmigo);
+            if (contador.Erro == null)
             {
-                _repository.Create(LocalizacaoDoAmigo);
-                return Json(LocalizacaoDoAmigo);
+                if (ValidaNome.Erro == null)
+                {
+                    _repository.Create(LocalizacaoDoAmigo);
+                    return StatusCode(200, LocalizacaoDoAmigo);
+                }
+                else
+                {
+                    return StatusCode(400, ValidaNome.Erro);
+
+                }
             }
             else
             {
-                Dictionary<string, string> resposta = new Dictionary<string, string>();
-                resposta.Add( "Erro", "Não é possivel cadastrar 2 Amigos coma mesma localização");
-                return Json(resposta);
+                return StatusCode(400, contador.Erro);
             }
-           
-
 
         }
+
+        
 
 
     }

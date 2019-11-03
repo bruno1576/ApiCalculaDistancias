@@ -6,6 +6,6 @@ namespace DistanciaAmigos.Services.InterfaceServices
 {
     public interface ICalculoDistancia
     {
-        Dictionary<string, double> CalculaDistancias(float X, float Y, IEnumerable<Amigo> Context);
+        DistanciaResult CalculaDistancias(float X, float Y, IEnumerable<DistanciaEntreAmigos> Context);
     }
 }
